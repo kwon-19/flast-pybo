@@ -1,0 +1,2 @@
+FLASK_APP=pydo
+FLASK_ENV=development
