@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h5 class="my-3 border-bottom pb-2">질문 등록</h5>
+    <form method="post" class="my-3" novalidate>
+        <!-- 브라우저에 있는 csrf_token확인 -->
+        {{ form.csrf_token }}
+        {% include 'form_errors.html' %}
+
+        {{ form.subject.label }}  <!-- <label for="">제목</label> -->
+        {{ form.subject(class='form-control mb-3') }}      <!-- <input type="text" name="" id=""> -->
+
+        {{ form.content.label }}  <!-- <label for="">내용</label> -->
+        {{ form.content(class='form-control', rows='5') }}      <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+        {{ form.submit(class='btn btn-primary my-3') }}       <!-- <button type="submit">저장하기</button> -->
+    </form>
+</div>
+{% endblock %}
